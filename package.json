@@ -1,15 +1,21 @@
 {
-  "name": "blur",
+  "name": "nextjs-typescript-axios-app",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "axios": "^1.0.0"
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "@types/react": "^18.2.14",
+    "@types/node": "^20.4.2"
   }
 }
