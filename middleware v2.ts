@@ -1,19 +1,16 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-declare module 'next/server' {
-  interface NextRequest {
-    ip?: string
-  }
-}
-
 export function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
+
+  // Extract IP from header
   const forwarded = request.headers.get('x-forwarded-for');
-  (request as any).ip = forwarded ? forwarded.split(',')[0] : request.socket?.remoteAddress;
+  const ip = forwarded?.split(',')[0]?.trim();
 
-  console.log(`Incoming request: ${pathname}${search}`);
+  console.log(`Incoming request: ${pathname}${search} from IP: ${ip}`);
 
+  // Rewrite .php to API route
   if (pathname.endsWith('.php')) {
     const url = request.nextUrl.clone();
     url.pathname = '/api/secureproxy';
