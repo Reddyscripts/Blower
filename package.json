@@ -1,21 +1,26 @@
 {
-  "name": "nextjs-axios-app",
-  "version": "1.0.0",
+  "name": "blur",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "axios": "^1.6.8"
+    "axios": "^1.7.2", // Example version, actual might vary
+    "next": "14.2.5",   // Example version, actual might vary
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5.3.3",
-    "@types/react": "^18.2.41",
-    "@types/node": "^20.11.30"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5", // Example version
+    "typescript": "^5"
   }
 }
+
